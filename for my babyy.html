@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>you better do it</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: pink ;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <h2>Login QUICK</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="button" onclick="login()">Login</button>
+    <p id="loginResult"></p>
+</form>
+
+<script>
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var loginResultElement = document.getElementById("loginResult");
+
+        // Basic validation (you should perform more robust validation in a real scenario)
+        if (username === "" || password === "") {
+            loginResultElement.textContent = "Please enter both username and password.";
+        } else {
+            // Check the password (replace 'correctPassword' with your actual correct password)
+            var correctPassword = "26122023";
+
+            if (password === correctPassword) {
+                loginResultElement.textContent = "Login successful!";
+                alert("Login successful!\nRedirecting to another website...");
+                // Redirect to another website (replace 'https://www.google.com' with your desired website)
+                window.location.href = 'http://127.0.0.1:5500/love.html';
+            } else {
+                loginResultElement.textContent = "Incorrect password. Please try again.";
+            }
+        }
+    }
+</script>
+
+</body>
+
